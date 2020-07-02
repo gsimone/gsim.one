@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from 'react-three-fiber'
-import { OrbitControls, Cylinder, Icosahedron } from 'drei'
+import { OrbitControls, Cylinder, MeshWobbleMaterial, Icosahedron } from 'drei'
 
 function ccccc(children, color) {
   const fontSize = 450
@@ -87,7 +87,7 @@ function Scene() {
         GSIMONE
       </TextRing>
       <Icosahedron args={[0.5, 1]}>
-        <meshBasicMaterial attach="material" wireframe />
+        <MeshWobbleMaterial attach="material" wireframe speed={1} factor={0.5} />
       </Icosahedron>
       <OrbitControls />
     </Canvas>
